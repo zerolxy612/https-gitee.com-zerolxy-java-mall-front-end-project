@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SearchBar":"/components/SearchBar/SearchBar"
+  },
+  "navigationBarTitleText": "java商城-首页"
+}
