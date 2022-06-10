@@ -12,13 +12,20 @@ Page({
   data: {
     // 轮播图数组
     swiperList: [],
-    baseUrl: ''
+    baseUrl: '',
+    bigTypeList:[],
+    bigTypeList_row1:[],
+    bigTypeList_row2:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const baseUrl=getBaseUrl();
+        this.setData({
+           baseUrl
+        })
     // 发送异步请求，获取后端数据
     // wx.request({
     //   url: 'http://localhost:8080/product/findSwiper',
@@ -35,8 +42,9 @@ Page({
     // })
 
     this.getSwiperList();
+    this.getBigTypeList();
   },
-
+//  async表示调用异步方法
   async getSwiperList() {
     // requestUtil({url: '/product/findSwiper',method:"GET"})
     //   .then(result=>{
@@ -51,12 +59,30 @@ Page({
       url: '/product/findSwiper',
       method: "GET"
     });
-    const baseUrl = getBaseUrl();
     this.setData({
       swiperList: result.message,
-      baseUrl
     })
 
+  },
+
+  async getBigTypeList(){
+    const result = await requestUtil({
+      url: '/bigType/findAll',
+      method: "GET"
+    });
+    console.log(result);
+    const bigTypeList = result.message;
+    const bigTypeList_row1 =  bigTypeList.filter((item,index)=>{
+      return index<5;
+    })
+    const bigTypeList_row2 =  bigTypeList.filter((item,index)=>{
+      return index>=5;
+    })
+    this.setData({
+      bigTypeList,
+      bigTypeList_row1,
+      bigTypeList_row2
+    })
   }
 
 })

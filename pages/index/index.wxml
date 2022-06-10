@@ -19,4 +19,25 @@
   </view>
   <!-- 轮播图结束 -->
 
+
+<view class="index_bigType">
+<view class="bigTypeRow">
+  <navigator
+  wx:for="{{bigTypeList_row1}}"
+        wx:for-item="bigType"
+        wx:key="id"
+  >
+    <image mode="widthFix" src="{{baseUrl+'/image/bigType/'+bigType.image}}"></image>
+  </navigator>
+</view>
+<view class="bigTypeRow">
+  <navigator
+  wx:for="{{bigTypeList_row2}}"
+        wx:for-item="bigType"
+        wx:key="id"
+  >
+    <image mode="widthFix" src="{{baseUrl+'/image/bigType/'+bigType.image}}"></image>
+  </navigator>
+</view>
+</view>
 </view>
