@@ -15,7 +15,8 @@ Page({
     baseUrl: '',
     bigTypeList:[],
     bigTypeList_row1:[],
-    bigTypeList_row2:[]
+    bigTypeList_row2:[],
+    hotProductList:[]
   },
 
   /**
@@ -43,6 +44,7 @@ Page({
 
     this.getSwiperList();
     this.getBigTypeList();
+    this.getHotProductList();
   },
 //  async表示调用异步方法
   async getSwiperList() {
@@ -61,6 +63,18 @@ Page({
     });
     this.setData({
       swiperList: result.message,
+    })
+
+  },
+
+  // 获取热卖商品
+  async getHotProductList() {
+    const result = await requestUtil({
+      url: '/product/findHot',
+      method: "GET"
+    });
+    this.setData({
+      hotProductList: result.message,
     })
 
   },

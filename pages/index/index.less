@@ -26,3 +26,40 @@
     }
   }
 }
+
+.index_hotProduct{
+  .product_title{
+    font-size: 32rpx;
+    font-weight: 600;
+    padding: 20rpx;
+    color: var(--themeColor);
+    background-color: #E0E0E0;
+  }
+  .product_list{
+    display: flex;
+    flex-wrap: wrap;
+    .product_detail{
+      width: 46%;
+      text-align: center;
+      margin: 15rpx;
+      navigator{
+        image{
+          width: 100%;
+          background-color: #F5F5F5;
+        }
+        .product_name{
+          // 字数过多自动隐藏
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .product_price{
+          color: var( --themeColor);
+        }
+        button {
+
+        }
+      }
+    }
+  }
+}
