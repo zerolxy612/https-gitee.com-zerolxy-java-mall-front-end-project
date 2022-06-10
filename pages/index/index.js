@@ -1,5 +1,9 @@
 // 导入request请求工具类
-import {requestUtil} from '../../utils/requestUtil.js'
+import {
+  getBaseUrl,
+  requestUtil
+} from '../../utils/requestUtil.js';
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
   /**
@@ -7,7 +11,8 @@ Page({
    */
   data: {
     // 轮播图数组
-    swiperList:[]
+    swiperList: [],
+    baseUrl: ''
   },
 
   /**
@@ -28,10 +33,30 @@ Page({
     //     })
     //   }
     // })
-    requestUtil({url: 'http://localhost:8080/product/findSwiper',method:"GET"}).then(result=>{
-      this.setData({
-        swiperList:result.message
-      })
+
+    this.getSwiperList();
+  },
+
+  async getSwiperList() {
+    // requestUtil({url: '/product/findSwiper',method:"GET"})
+    //   .then(result=>{
+    //     const baseUrl=getBaseUrl();
+    //     this.setData({
+    //        swiperList:result.message,
+    //        baseUrl
+    //     })
+    //   })
+
+    const result = await requestUtil({
+      url: '/product/findSwiper',
+      method: "GET"
+    });
+    const baseUrl = getBaseUrl();
+    this.setData({
+      swiperList: result.message,
+      baseUrl
     })
+
   }
+
 })
