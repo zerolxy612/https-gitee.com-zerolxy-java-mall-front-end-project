@@ -2,4 +2,106 @@
   <!-- 搜索框开始 -->
   <SearchBar></SearchBar>
   <!-- 搜索框结束 -->
+
+  <view class="cates_container">
+    <!-- 左侧菜单 开始 -->
+    <scroll-view scroll-y class="left_menu">
+      <view>菜单1</view>
+      <view>菜单2</view>
+      <view>菜单3</view>
+      <view>菜单4</view>
+      <view>菜单5</view>
+      <view>菜单6</view>
+      <view>菜单7</view>
+      <view>菜单8</view>
+      <view>菜单9</view>
+      <view>菜单10</view>
+      <view>菜单11</view>
+      <view>菜单12</view>
+      <view>菜单13</view>
+      <view>菜单14</view>
+      <view>菜单15</view>
+      <view>菜单16</view>
+      <view>菜单17</view>
+      <view>菜单18</view>
+      <view>菜单19</view>
+      <view>菜单20</view>
+      <view>菜单21</view>
+      <view>菜单22</view>
+      <view>菜单23</view>
+      <view>菜单24</view>
+      <view>菜单25</view>
+      <view>菜单26</view>
+      <view>菜单27</view>
+      <view>菜单28</view>
+      <view>菜单29</view>
+      <view>菜单30</view>
+    </scroll-view>
+    <!-- 左侧菜单 结束 -->
+
+    <!-- 右侧商品数据 开始 -->
+    <scroll-view scroll-y class="right_content">
+    <view>商品数据1</view>
+    <view>商品数据2</view>
+    <view>商品数据3</view>
+    <view>商品数据4</view>
+    <view>商品数据5</view>
+    <view>商品数据6</view>
+    <view>商品数据7</view>
+    <view>商品数据8</view>
+    <view>商品数据9</view>
+    <view>商品数据10</view>
+    <view>商品数据11</view>
+    <view>商品数据12</view>
+    <view>商品数据13</view>
+    <view>商品数据14</view>
+    <view>商品数据15</view>
+    <view>商品数据16</view>
+    <view>商品数据17</view>
+    <view>商品数据18</view>
+    <view>商品数据19</view>
+    <view>商品数据20</view>
+    <view>商品数据21</view>
+    <view>商品数据22</view>
+    <view>商品数据23</view>
+    <view>商品数据24</view>
+    <view>商品数据25</view>
+    <view>商品数据26</view>
+    <view>商品数据27</view>
+    <view>商品数据28</view>
+    <view>商品数据29</view>
+    <view>商品数据30</view>
+    <view>商品数据31</view>
+    <view>商品数据32</view>
+    <view>商品数据33</view>
+    <view>商品数据34</view>
+    <view>商品数据35</view>
+    <view>商品数据36</view>
+    <view>商品数据37</view>
+    <view>商品数据38</view>
+    <view>商品数据39</view>
+    <view>商品数据40</view>
+    <view>商品数据41</view>
+    <view>商品数据42</view>
+    <view>商品数据43</view>
+    <view>商品数据44</view>
+    <view>商品数据45</view>
+    <view>商品数据46</view>
+    <view>商品数据47</view>
+    <view>商品数据48</view>
+    <view>商品数据49</view>
+    <view>商品数据50</view>
+    <view>商品数据51</view>
+    <view>商品数据52</view>
+    <view>商品数据53</view>
+    <view>商品数据54</view>
+    <view>商品数据55</view>
+    <view>商品数据56</view>
+    <view>商品数据57</view>
+    <view>商品数据58</view>
+    <view>商品数据59</view>
+    <view>商品数据60</view>
+    </scroll-view>
+     <!-- 右侧商品数据 结束 -->
+  </view>
 </view>
