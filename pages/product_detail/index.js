@@ -11,7 +11,8 @@ Page({
    */
   data: {
     baseUrl:'',
-    productObj:{}
+    productObj:{},
+    activeIndex: 0
   },
 
   /**
@@ -24,6 +25,15 @@ Page({
        baseUrl
     })
     this.getProductDetail(options.id)
+  },
+
+  // tab点击事件
+  handleItemTap(e){
+    const {index} = e.currentTarget.dataset;
+    console.log(index);
+    this.setData({
+      activeIndex:index
+    })
   },
 
  // 获取商品详情

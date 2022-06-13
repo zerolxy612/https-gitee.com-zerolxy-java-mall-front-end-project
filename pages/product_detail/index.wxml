@@ -1,3 +1,4 @@
+<!-- 商品轮播 开始 -->
 <view class="product_swiper">
   <swiper autoplay circular	indicator-dots>
       <swiper-item 
@@ -9,4 +10,34 @@
         </navigator>
       </swiper-item>
     </swiper>
+</view>
+<!-- 商品轮播 结束 -->
+
+<view class="product_price">
+  ¥ {{productObj.price}}
+</view>
+<view class="product_name">
+  {{productObj.name}}
+</view>
+<view class="product_description">
+  {{productObj.description}}
+</view>
+
+<view class="desc_tabs">
+  <view class="tabs_title">
+    <view class="title_item {{activeIndex==0?'active':''}}" bindtap="handleItemTap" data-index="0">
+      商品介绍
+    </view>
+    <view class="title_item {{activeIndex==1?'active':''}}"  bindtap="handleItemTap" data-index="1">
+      规格参数
+    </view>
+  </view>
+  <view class="tabs_content">
+  <view wx:if="{{activeIndex==0}}">
+    <rich-text nodes="{{productObj.productIntroImgs}}"></rich-text>
+  </view>
+  <view wx:elif="{{activeIndex==1}}">
+    <rich-text nodes="{{productObj.productParaImgs}}"></rich-text>
+  </view>
+  </view>
 </view>
