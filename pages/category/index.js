@@ -11,6 +11,7 @@ Page({
    */
   data: {
     baseUrl:'',
+    scrollTop: 0, //设置竖向滚动条位置
     currentIndex: 0, // 当前选中左侧菜单的索引
     leftMenuList:[], // 左侧菜单数据
     rightContext:[] // 右侧商品数据
@@ -57,7 +58,8 @@ Page({
       console.log("index=" + index);
       this.setData({
         currentIndex: index,
-        rightContext 
+        rightContext,
+        scrollTop: 0
       })
     },
 

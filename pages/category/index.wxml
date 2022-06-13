@@ -18,7 +18,7 @@
     <!-- 左侧菜单 结束 -->
 
     <!-- 右侧商品数据 开始 -->
-    <scroll-view scroll-y class="right_content">
+    <scroll-view scroll-y class="right_content" scroll-top="{{scrollTop}}">
       <view class="productType"
       wx:for="{{rightContext}}"
       wx:for-item="productType"
