@@ -1,0 +1,12 @@
+<view class="product_swiper">
+  <swiper autoplay circular	indicator-dots>
+      <swiper-item 
+        wx:for="{{productObj.productSwiperImageList}}"
+        wx:key="id"
+      >
+        <navigator>
+          <image mode="widthFix" src="{{baseUrl+'/image/productSwiperImgs/'+item.image}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+</view>

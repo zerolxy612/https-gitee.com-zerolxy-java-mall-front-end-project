@@ -102,6 +102,7 @@ Page({
     if(index!=-1){  // 从首页跳转过来
       // let rightContext=this.Cates[index].smallTypeList;
       // this.setData({
+        
       //   leftMenuList,
       //   rightContext
       // })
