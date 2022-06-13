@@ -11,6 +11,7 @@ Page({
    */
   data: {
     baseUrl:'',
+    currentIndex: 0, // 当前选中左侧菜单的索引
     leftMenuList:[], // 左侧菜单数据
     rightContext:[] // 右侧商品数据
 
@@ -47,6 +48,19 @@ Page({
 
 
     },
+
+    // 左侧菜单点击切换事件
+    handleMenuItemChange(e){
+      // console.log(e);
+      const {index} = e.currentTarget.dataset;
+      let rightContext = this.Cates[index].smallTypeList;
+      console.log("index=" + index);
+      this.setData({
+        currentIndex: index,
+        rightContext 
+      })
+    },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
