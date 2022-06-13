@@ -23,6 +23,8 @@
 <view class="index_bigType">
 <view class="bigTypeRow">
   <navigator
+  bindtap="handleTypeJump"
+  data-index="{{index}}"
   wx:for="{{bigTypeList_row1}}"
         wx:for-item="bigType"
         wx:key="id"
@@ -32,6 +34,8 @@
 </view>
 <view class="bigTypeRow">
   <navigator
+  bindtap="handleTypeJump"
+  data-index="{{index+ 5}}"
   wx:for="{{bigTypeList_row2}}"
         wx:for-item="bigType"
         wx:key="id"

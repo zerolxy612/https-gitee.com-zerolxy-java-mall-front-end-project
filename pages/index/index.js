@@ -46,6 +46,20 @@ Page({
     this.getBigTypeList();
     this.getHotProductList();
   },
+
+  // 大类点击事件 跳转 商品大类页面
+  handleTypeJump(e){
+    const {index} =  e.currentTarget.dataset;
+    console.log("index="+index);
+
+    const app = getApp();
+    app.globalData.index = index;
+
+    wx.switchTab({
+      url: '/pages/category/index',
+    })
+  },
+
 //  async表示调用异步方法
   async getSwiperList() {
     // requestUtil({url: '/product/findSwiper',method:"GET"})

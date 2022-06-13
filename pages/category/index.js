@@ -23,6 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log("onLoad");
     const baseUrl=getBaseUrl();
     this.setData({
        baseUrl
@@ -74,7 +75,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    console.log("onShow");
+    const app = getApp();
+    const {index} = app.globalData;
+    console.log("index="+index);
 
+    if (index!=-1){
+      // 从首页跳转过来
+      let rightContext = this.Cates[index].smallTypeList;
+      this.setData({
+        leftMenuList,
+        rightContext
+      })
+      app.globalData.index = -1; //重置index
+
+    }
   },
 
   /**
