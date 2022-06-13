@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    baseUrl:'',
     leftMenuList:[], // 左侧菜单数据
     rightContext:[] // 右侧商品数据
 
@@ -20,6 +21,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const baseUrl=getBaseUrl();
+    this.setData({
+       baseUrl
+    });
     this.getCates();
   },
 

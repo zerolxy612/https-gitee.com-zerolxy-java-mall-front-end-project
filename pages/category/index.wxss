@@ -6,7 +6,7 @@
   display: flex;
 }
 .cates .cates_container .left_menu {
-  flex: 2;
+  flex: 5;
 }
 .cates .cates_container .right_content {
   flex: 5;
