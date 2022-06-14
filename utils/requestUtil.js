@@ -24,11 +24,11 @@ export const requestUtil=(params)=>{
 
   })
   // 模拟网络延迟加载
-  while(true){
-    if(new Date().getTime()-start>0.5*1000){
-      break;
-    }
-  }
+  // while(true){
+  //   if(new Date().getTime()-start>0.5*1000){
+  //     break;
+  //   }
+  // }
   return new Promise((resolve,reject)=>{
     wx.request({
       ...params,
