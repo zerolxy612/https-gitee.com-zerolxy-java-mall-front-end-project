@@ -25,7 +25,7 @@ export const requestUtil=(params)=>{
   })
   // 模拟网络延迟加载
   while(true){
-    if(new Date().getTime()-start>1*1000){
+    if(new Date().getTime()-start>0.5*1000){
       break;
     }
   }

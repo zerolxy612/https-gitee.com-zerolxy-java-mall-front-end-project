@@ -1,1 +1,21 @@
-/* pages/cart/index.wxss */
+.recevie_address_row .address_btn {
+  padding: 22rpx;
+}
+.recevie_address_row .address_btn button {
+  width: 60%;
+}
+.recevie_address_row .user_info_row {
+  display: flex;
+  padding: 22rpx;
+}
+.recevie_address_row .user_info_row .user_info {
+  flex: 5;
+}
+.recevie_address_row .user_info_row .change_address_btn {
+  flex: 3;
+  text-align: right;
+}
+.recevie_address_row .user_info_row .change_address_btn button {
+  border: 1px solid gray;
+  font-weight: normal;
+}
