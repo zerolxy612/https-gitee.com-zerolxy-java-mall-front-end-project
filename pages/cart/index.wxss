@@ -80,6 +80,7 @@
   align-items: center;
   width: 55rpx;
   height: 55rpx;
+  font-weight: bold;
 }
 .cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .cart_num_tool .goods_num {
   display: flex;

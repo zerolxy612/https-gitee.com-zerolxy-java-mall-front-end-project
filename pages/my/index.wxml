@@ -1,2 +1,15 @@
-<!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class="user_info">
+  <!-- 用户背景信息 开始 -->
+    <view class="user_info_bg">
+      <view class="user_info_wrap">
+        <image src=""></image>
+        <view class="user_name"></view>
+      </view>
+    </view>
+  <!-- 用户背景信息 结束 -->
+  <!-- 用户操作菜单 开始 -->
+  <view class="user_menu">
+  
+  </view>
+  <!-- 用户操作菜单 结束 -->
+</view>
