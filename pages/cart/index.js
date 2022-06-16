@@ -51,6 +51,23 @@ Page({
     console.log("show")
     const address=wx.getStorageSync('address');
     const cart=wx.getStorageSync('cart')||[];
+    this.setData({
+      address
+    })
+    this.setCart(cart);
+  },
+  // 商品选中事件处理
+  handleItemChange(e){
+    const {id} = e.currentTarget.dataset;
+    let {cart} = this.data;
+    let index = cart.findIndex(v=>v.id===id);
+    cart[index].checked = !cart[index].checked;
+
+    this.setCart(cart);
+  },
+
+  // 设置购物车状态,重新计算底部工具栏状态
+  setCart(cart){
     let allChecked = true;
     let totalPrice = 0;
     let totalNum = 0;
@@ -64,46 +81,12 @@ Page({
     });
     allChecked=cart.length!=0?allChecked:false;
     this.setData({
-      address,
       cart,
       allChecked,
       totalNum,
       totalPrice
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    //cart设置到缓存中
+    
   }
 })

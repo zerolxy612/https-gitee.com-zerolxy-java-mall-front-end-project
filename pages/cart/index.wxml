@@ -25,7 +25,7 @@
     >
       <!-- 复选框 开始 -->
       <view class="cart_chk_wrap">
-        <checkbox-group>
+        <checkbox-group data-id="{{item.id}}" bindchange="handleItemChange">
           <checkbox checked="{{item.checked}}"></checkbox>
         </checkbox-group>
       </view>
@@ -64,7 +64,7 @@
   <!-- 全选 开始 -->
   <view class="all_chk_wrap">
     <checkbox-group>
-      <checkbox checked="allChecked"><text decode="true">&nbsp;&nbsp;全选</text></checkbox>
+      <checkbox checked="{{allChecked}}"><text decode="true">&nbsp;&nbsp;全选</text></checkbox>
     </checkbox-group>
   </view>
   <!-- 全选 结束 -->
