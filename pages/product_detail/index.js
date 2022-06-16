@@ -73,6 +73,7 @@ Page({
     let index=cart.findIndex(v=>v.id===this.productInfo.id);
     if(index===-1){ // 购物车里面不存在当前商品 
       this.productInfo.num=1;
+      this.productInfo.checked=true;
       cart.push(this.productInfo);
     }else{ // 已经存在
       cart[index].num++;

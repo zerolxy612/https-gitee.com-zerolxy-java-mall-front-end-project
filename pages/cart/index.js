@@ -12,7 +12,10 @@ Page({
   data: {
     address:{},
     baseUrl: '',
-    cart:[]
+    cart:[],
+    allChecked:false,
+    totalPrice:0,
+    totalNum:0
   },
 
   handleChooseAddress(){
@@ -48,9 +51,24 @@ Page({
     console.log("show")
     const address=wx.getStorageSync('address');
     const cart=wx.getStorageSync('cart')||[];
+    let allChecked = true;
+    let totalPrice = 0;
+    let totalNum = 0;
+    cart.forEach(v=>{
+      if(v.checked){
+        totalPrice+=v.price*v.num;
+        totalNum+=v.num;
+      }else {
+        allChecked = false;
+      }
+    });
+    allChecked=cart.length!=0?allChecked:false;
     this.setData({
       address,
-      cart
+      cart,
+      allChecked,
+      totalNum,
+      totalPrice
     })
   },
 
