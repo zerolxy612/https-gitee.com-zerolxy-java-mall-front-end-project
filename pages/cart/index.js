@@ -66,6 +66,23 @@ Page({
     this.setCart(cart);
   },
 
+  // 商品全选事件处理
+  handleItemAllCheck(){
+    let { cart,allChecked } = this.data;
+    allChecked = !allChecked;
+    cart.forEach(v=>v.checked=allChecked);
+    this.setCart(cart);
+  },
+// 商品数量的编辑功能
+handleItemNumEdit(e){
+    const {id,operation} = e.currentTarget.dataset;
+    console.log(id,operation);
+    let {cart} = this.data;
+    let index = cart.findIndex(v=>v.id===id);
+    cart[index].num+=operation;
+    this.setCart(cart);
+},
+
   // 设置购物车状态,重新计算底部工具栏状态
   setCart(cart){
     let allChecked = true;
