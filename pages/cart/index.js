@@ -79,8 +79,23 @@ handleItemNumEdit(e){
     console.log(id,operation);
     let {cart} = this.data;
     let index = cart.findIndex(v=>v.id===id);
-    cart[index].num+=operation;
-    this.setCart(cart);
+    if(cart[index].num===1 && operation === -1){
+      wx.showModal({
+        title:'系统提示',
+        content:'您是否要删除',
+        cancelColor: 'cancelColor',
+        success:(res)=>{
+          if(res.confirm){
+            cart.splice(index,1);
+            this.setCart(cart);
+          }
+        }
+      })
+    }else {
+      cart[index].num+=operation;
+      this.setCart(cart);
+    }
+   
 },
 
   // 设置购物车状态,重新计算底部工具栏状态
