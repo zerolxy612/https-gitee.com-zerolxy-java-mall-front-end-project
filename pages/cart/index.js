@@ -98,6 +98,48 @@ handleItemNumEdit(e){
    
 },
 
+// 点击结算
+handlePay(){
+  const [address,totalNum] = this.data;
+  if(!address){
+    wx.showToast({
+      title: '您还没有选择收货地址',
+      icon:'none'
+    })
+    return;
+  }
+  if(totalNum===0){
+    wx.showToast({
+      title: '您还没有选购商品',
+      icon:'none'
+    })
+    return;
+  }
+  wx.navigateTo({
+    url: '/pages/pay/index',
+  })
+}, // 点击结算
+handlePay(){
+  const {address,totalNum}=this.data;
+  if(!address){
+    wx.showToast({
+      title: '您还没有选择收货地址',
+      icon:'none'
+    })
+    return;
+  }
+  if(totalNum===0){
+    wx.showToast({
+      title: '您还没有选购商品',
+      icon:'none'
+    })
+    return;
+  }
+  wx.navigateTo({
+    url: '/pages/pay/index'
+  })
+},
+
   // 设置购物车状态,重新计算底部工具栏状态
   setCart(cart){
     let allChecked = true;

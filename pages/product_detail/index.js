@@ -66,6 +66,15 @@ Page({
     })
   },
 
+  
+  // 点击 立即购买
+  handleBuy(){
+    this.setCartadd();
+    wx.switchTab({
+      url: '/pages/cart/index',
+    })
+  },
+
   // 加入购物车
   setCartadd(){
     let cart=wx.getStorageSync('cart')||[];
@@ -80,6 +89,7 @@ Page({
     }
     wx.setStorageSync('cart', cart); // 把购物车添加到缓存中
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
