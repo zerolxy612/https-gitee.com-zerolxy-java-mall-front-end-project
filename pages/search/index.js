@@ -1,13 +1,49 @@
-// pages/search/index.js
+// 导入request请求工具类
+import {
+  getBaseUrl,
+  requestUtil
+} from '../../utils/requestUtil.js';
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    productList:[], //商品数组
+    inputValue:"", //输入框的值
+    isFocus:false //取消按钮是否显示
   },
 
+  //处理input事件
+  handleInput(e){
+    const {value} =  e.detail;
+    if(!value.trim()){
+      this.setData({
+        productList:[],
+        isFocus:false
+      })
+      return;
+    }
+
+    this.setData({
+      isFocus:true
+    })
+    this.search(value);
+  },
+
+   /**
+   * 商品搜索
+   */
+  async search(q) {
+    const result = await requestUtil({
+      url: '/product/search',
+      data:{q}
+    });
+    this.setData({
+      productList:result.message
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

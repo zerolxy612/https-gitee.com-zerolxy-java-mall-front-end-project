@@ -29,6 +29,15 @@ Page({
     })
   },
 
+  /**
+   * 创建订单
+   */
+  async createOrder(){
+    const orderParam={
+      
+    }
+    const res = await requestUtil({url:"/my/order/create",method:"post",data:prderparam});
+  }
   
   /**
    * 生命周期函数--监听页面显示

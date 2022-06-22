@@ -2,8 +2,8 @@
   <!-- 用户背景信息 开始 -->
     <view class="user_info_bg">
       <view class="user_info_wrap">
-        <image src=""></image>
-        <view class="user_name"></view>
+        <image src="https://www.keaidian.com/uploads/allimg/190610/10095245_8.jpeg"></image>
+        <view class="user_name">haoren</view>
       </view>
     </view>
   <!-- 用户背景信息 结束 -->
