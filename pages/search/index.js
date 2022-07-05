@@ -14,7 +14,7 @@ Page({
     inputValue:"", //输入框的值
     isFocus:false //取消按钮是否显示
   },
-
+  TimeoutId:-1,
   //处理input事件
   handleInput(e){
     const {value} =  e.detail;
@@ -25,11 +25,14 @@ Page({
       })
       return;
     }
-
     this.setData({
       isFocus:true
     })
-    this.search(value);
+    clearTimeout(this.TimeoutId);
+    this.TimeoutId = setTimeout(()=>{
+      this.search(value);
+    },1000)
+    
   },
 
    /**

@@ -9,6 +9,39 @@ let ajaxtTimes = 0;
 export const getBaseUrl=()=>{
   return baseUrl;
 }
+/**
+ * wx login封装
+ */
+export const getWxLogin=()=>{
+  return new Promise((resolve,reject)=>{
+    wx.login({
+      timeout: 5000,
+      success:(res)=>{
+        resolve(res)
+      },
+      fail:(err)=>{
+        reject(err)
+      }
+    })
+  });
+}
+
+/**
+ * wx getUserProfile封装
+ */
+export const getUserProfile=()=>{
+  return new Promise((resolve,reject)=>{
+    wx.getUserProfile({
+      desc: '获取用户信息',
+      success:(res)=>{
+        resolve(res)
+      },
+      fail:(err)=>{
+        reject(err)
+      }
+    })
+  });
+}
 
 /**
  * 后端请求工具类
