@@ -49,6 +49,14 @@ export const getUserProfile=()=>{
  */
 export const requestUtil=(params)=>{
 
+  // 判断url中是否带有/my/ 请求的是私有的路径 带上header token
+  let header = (...params,token){
+    if(params.url.includes("/my/")){
+      //拼接header 带上token
+      header["token"]=wx.getStorageSync('token');
+    }
+  }
+  
   var start = new Date().getTime();
   ajaxtTimes++;
   wx.showLoading({
@@ -65,6 +73,7 @@ export const requestUtil=(params)=>{
   return new Promise((resolve,reject)=>{
     wx.request({
       ...params,
+      header,
       url:baseUrl+params.url,
       success:(result)=>{
        resolve(result.data)

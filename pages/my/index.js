@@ -69,7 +69,18 @@ Page({
     }
   },
 
-  
+  /**
+   * 创建订单
+   */
+async createOrder(){
+  const orderParam = {
+
+  }
+  const res = await requestUtil({url:"/my/order/create",method:"POST",data:orderParam});
+},
+
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
